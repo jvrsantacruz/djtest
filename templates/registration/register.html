@@ -1,0 +1,16 @@
+{% extends "djtest/base.html" %}
+
+{% block title %}Registration{% endblock %}
+
+{% block header %}Create an account{% endblock %}
+
+{% block content %}
+
+<form action="{% url djtest-register %}" method="POST">
+  <ul class="form">
+    {{ form.as_ul }}
+    <input type="submit" value="Create the account" />
+  </ul>
+</form>
+
+{% endblock %}
