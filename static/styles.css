@@ -1,0 +1,17 @@
+/* Header */
+#header h1 { font-family: Garamond, serif; font-size: 2em; color: #333; }
+#header a { text-decoration: none; margin: 0 5px 0 5px;}
+#header a:link, .header a:hover, .header a:active { color: #A80000; }
+#header a:visited { color: #700000; }
+
+/* Forms */
+.helptext { font-size: 0.8em; color: #aaa; }
+
+/* News */
+.new { border: solid black 1px; max-width: 500px; border-radius: 15px; margin: 5px 0 15px 35px; }
+.title { color: #555; margin-left: 15px; }
+.date { font-size: 0.6em; color: #777; margin-left: 15px; }
+.new img { display: block; margin: 5px auto 5px auto; }
+.media { margin: 5px 0 15px 10px; }
+.media a { font-size: 0.8em; }
+.comment { margin: 15px; font-family: sans-serif; }
