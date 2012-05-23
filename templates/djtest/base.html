@@ -1,0 +1,37 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}"
+    xml:lang="{% firstof LANGUAGE_CODE 'en' %}"
+    lang="{% firstof LANGUAGE_CODE 'en' %}">
+
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% get_static_prefix %}styles.css" type="text/css" media="screen" />
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>{% block header %} {% endblock %}</h1>
+      <a href="{% url djtest-main %}">Home</a>
+      <a href="{% url djtest-register %}">New user</a>
+      {% if user.is_authenticated %}
+        <a href="{% url djtest-logout %}">Log-out</a>
+        <a href="{% url djtest-send %}">Admin</a>
+      {% else %}
+        <a href="{% url djtest-login %}">Log-in</a>
+      {% endif %}
+    </div>
+
+	<div id="content">
+    {% block content %} {% endblock %}
+	</div>
+
+    <div id="footer">
+    {% block footer %} {% endblock %}
+    </div>
+  </body>
+
+</html>
