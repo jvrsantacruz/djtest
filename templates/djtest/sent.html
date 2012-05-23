@@ -1,0 +1,14 @@
+{% extends "djtest/base.html" %}
+
+{% block content %}
+<h1>Send a Press New</h1>
+
+  <div id="sent-new">
+    <p> PressNew successfully sent </p>
+
+  {% include "djtest/newview.html" with new=new %}
+
+  <a href="{% url djtest-send %}">Send another</a>
+  <a href="{% url djtest-main %}">See all news</a>
+</div>
+{% endblock %}

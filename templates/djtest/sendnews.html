@@ -1,0 +1,24 @@
+{% extends "djtest/base.html" %}
+
+{% block content %}
+<h1>Send a Press New</h1>
+
+{% if form.errors %}
+  <p style="red">
+    Some fields are incorrect: {{ form.errors|pluralize }}.
+  </p>
+{% endif %}
+
+{% load filetransfers %}
+<form action="{{ upload_url }}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% render_upload_data upload_data %}
+
+  <ul class="form">
+    {{ form.as_ul }}
+  </ul>
+
+  <input type="submit" value="Send"/>
+</form>
+
+{% endblock %}
