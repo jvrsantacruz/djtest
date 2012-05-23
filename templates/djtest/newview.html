@@ -1,0 +1,8 @@
+<div id="{{ new.id }}" class="new">
+  <h2 class="title">{{ new.title }} <span class="date">{{ new.pubdate}}</span></h2>
+  <img src="{{ new.imgurl }}"/>
+  <div class="media"><strong>From:</strong> {{ new.media }} <a href="{{ new.url }}">Link</a></div>
+  {% if new.comment %}
+    <div class="comment">{{ new.comment }}</div>
+  {% endif %}
+</div>

@@ -1,0 +1,22 @@
+{% extends "djtest/base.html" %}
+
+{% block title %} Press News {% endblock %}
+{% block header%} Press News {% endblock %}
+
+{% block content %}
+
+{% if not news %}
+  <p><strong>There's no news available at this moment.</strong></p>
+
+{% else %}
+
+  <p>Showing {{ news|length }} press news</p>
+
+  <div id="news">
+    {% for new in news %}
+      {% include "djtest/newview.html" with new=new %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% endblock %}
