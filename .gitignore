@@ -1,0 +1,9 @@
+*.swp
+*.pyc
+django
+autoload
+.gaedata
+dbindexer
+settings.py
+djangotoolbox
+djangoappengine
